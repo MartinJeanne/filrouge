@@ -1,0 +1,13 @@
+[
+	{"name":"AG2L","type":"pgi"},
+	{"name":"Aurea","type":"pgi"},
+	{"name":"Axelor","type":"pgi"},
+	{"name":"Microsoft Dynamics 365","type":"pgi"},
+	{"name":"Oracle e-Business Suite","type":"pgi"},
+	{"name":"Sage ERP X3","type":"pgi"},
+	{"name":"Active 3D","type":"sig"},
+	{"name":"AutoCad","type":"sig"},
+	{"name":"Windows Server 2012 R2","type":"os"},
+	{"name":"Windows 10 professional","type":"os"},
+	{"name":"Windows 8.1 Enterprise","type":"os"}
+]

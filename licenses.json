@@ -1,0 +1,14 @@
+[
+	{"name":"AG2L","services":"compta","count":1},
+	{"name":"Aurea","services":"compta","count":0},
+	{"name":"Axelor","services":"compta","count":0},
+	{"name":"Microsoft Dynamics 365","services":"compta","count":2},
+	{"name":"Oracle e-Business Suite","services":"compta","count":1},
+	{"name":"Sage ERP X3","services":"compta","count":1},
+	{"name":"Active 3D","services":"geo","count":3},
+	{"name":"AutoCad","services":"geo","count":2},
+	{"name":"GeoConcept","services":"geo","count":1},
+	{"name":"Windows Server 2012 R2","services":"dsi","count":5},
+	{"name":"Windows 10 professional","services":"dsi,direction,geo","count":10},
+	{"name":"Windows 8.1 Enterprise","services":"dsi,direction,geo,compta","count":20}
+]

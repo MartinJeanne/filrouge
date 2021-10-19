@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Our superheroes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="employees">
+        <div>Bonsoir</div>
+    </section>
+
+    <script>
+        let requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+        let request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'text';
+        request.send();
+
+        request.onload = function () {
+            const superHeroesText = request.response;
+            const superHeroes = JSON.parse(superHeroesText);
+            console.log(superHeroes);
+        }
+
+        const header = document.getElementById('header');
+        const sectionEmployees = document.getElementById('employees');
+
+
+    </script>
+</body>
+
+</html>

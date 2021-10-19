@@ -1,0 +1,18 @@
+[
+	{"name":"Robin Arryn","service":"dsi"},
+	{"name":"Robert Baratheon","service":"dsi"},
+	{"name":"Roose Bolton","service":"dsi"},
+	{"name":"Davos Mervault","service":"compta"},
+	{"name":"Tyrion Lannister","service":"compta"},
+	{"name":"Sansa Stark","service":"compta"},
+	{"name":"Jon Snow","service":"direction"},
+	{"name":"Bran Stark","service":"direction"},
+	{"name":"Daenerys Targaryen","service":"direction"},
+	{"name":"Jorah Mormont","service":"geo"},
+	{"name":"Missandei","service":"geo"},
+	{"name":"Petyr Baelish","service":"geo"},
+	{"name":"Varys","service":"geo"},
+	{"name":"Jaqen H'ghar","service":"geo"},
+	{"name":"Samwell Tarly","service":"geo"},
+	{"name":"Jeor Mormont","service":"geo"}
+]

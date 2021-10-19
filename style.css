@@ -6,6 +6,13 @@ html {
 }
 
 section {
+    display: inline-block;
     padding: 1vw;
     border: 1px solid rgb(116, 114, 114);
+}
+
+article {
+    padding: 1vw;
+    margin: 1vw;
+    border: 1px solid rgb(197, 197, 197);
 }

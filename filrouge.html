@@ -3,32 +3,44 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Our superheroes</title>
+    <title>Fil rouge Martin</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <section id="employees">
-        <div>Bonsoir</div>
     </section>
 
     <script>
-        let requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
         let request = new XMLHttpRequest();
-        request.open('GET', requestURL);
+        request.open('GET', 'https://raw.githubusercontent.com/MartinJeanne/filrouge/master/employees.json?token=ALCV2QXVKT3TWNG3FYGO4ZLBPAHRK');
         request.responseType = 'text';
         request.send();
 
         request.onload = function () {
-            const superHeroesText = request.response;
-            const superHeroes = JSON.parse(superHeroesText);
-            console.log(superHeroes);
+            const employees = JSON.parse(request.response);
+            console.log(employees);
+            populateSections(employees);
         }
 
         const header = document.getElementById('header');
         const sectionEmployees = document.getElementById('employees');
 
+        function populateSections(employees) {
+            for (let i = 0; i < employees.length; i++) {
+                const myArticle = document.createElement('article');
+                const myH2 = document.createElement('h2');
+                const myP = document.createElement('p');
 
+                myH2.textContent = employees[i].name;
+                myP.textContent = 'Service: ' + employees[i].service;
+
+                myArticle.appendChild(myH2);
+                myArticle.appendChild(myP);
+                
+                sectionEmployees.appendChild(myArticle);
+            }
+        }
     </script>
 </body>
 

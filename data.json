@@ -1,0 +1,53 @@
+{
+	"services" : [
+		{"name":"dsi","habilitations":"*"},
+		{"name":"compta","habilitations":"pgi,os"},
+		{"name":"geo","habilitations":"os,sig"},
+		{"name":"direction","habilitations":"*"}
+	],
+	"employees" : [
+		{"name":"Robin Arryn","service":"dsi"},
+		{"name":"Robert Baratheon","service":"dsi"},
+		{"name":"Roose Bolton","service":"dsi"},
+		{"name":"Davos Mervault","service":"compta"},
+		{"name":"Tyrion Lannister","service":"compta"},
+		{"name":"Sansa Stark","service":"compta"},
+		{"name":"Jon Snow","service":"direction"},
+		{"name":"Bran Stark","service":"direction"},
+		{"name":"Daenerys Targaryen","service":"direction"},
+		{"name":"Jorah Mormont","service":"geo"},
+		{"name":"Missandei","service":"geo"},
+		{"name":"Petyr Baelish","service":"geo"},
+		{"name":"Varys","service":"geo"},
+		{"name":"Jaqen H'ghar","service":"geo"},
+		{"name":"Samwell Tarly","service":"geo"},
+		{"name":"Jeor Mormont","service":"geo"}
+	],
+	"licence" : [
+		{"name":"AG2L","services":"compta","count":1},
+		{"name":"Aurea","services":"compta","count":0},
+		{"name":"Axelor","services":"compta","count":0},
+		{"name":"Microsoft Dynamics 365","services":"compta","count":2},
+		{"name":"Oracle e-Business Suite","services":"compta","count":1},
+		{"name":"Sage ERP X3","services":"compta","count":1},
+		{"name":"Active 3D","services":"geo","count":3},
+		{"name":"AutoCad","services":"geo","count":2},
+		{"name":"GeoConcept","services":"geo","count":1},
+		{"name":"Windows Server 2012 R2","services":"dsi","count":5},
+		{"name":"Windows 10 professional","services":"dsi,direction,geo","count":10},
+		{"name":"Windows 8.1 Enterprise","services":"dsi,direction,geo,compta","count":20}
+	],
+	"softs" : [
+		{"name":"AG2L","type":"pgi"},
+		{"name":"Aurea","type":"pgi"},
+		{"name":"Axelor","type":"pgi"},
+		{"name":"Microsoft Dynamics 365","type":"pgi"},
+		{"name":"Oracle e-Business Suite","type":"pgi"},
+		{"name":"Sage ERP X3","type":"pgi"},
+		{"name":"Active 3D","type":"sig"},
+		{"name":"AutoCad","type":"sig"},
+		{"name":"Windows Server 2012 R2","type":"os"},
+		{"name":"Windows 10 professional","type":"os"},
+		{"name":"Windows 8.1 Enterprise","type":"os"}
+	]
+}

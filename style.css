@@ -5,13 +5,20 @@ html {
     color: rgb(235, 235, 235);
 }
 
-section {
-    display: inline-block;
+section#employees {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1vw;
     padding: 1vw;
     border: 1px solid rgb(116, 114, 114);
 }
 
-article {
+#employees>article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(37, 37, 37);
     padding: 1vw;
     margin: 1vw;
     border: 1px solid rgb(197, 197, 197);

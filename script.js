@@ -7,7 +7,7 @@ request.onload = function () {
 	const data = JSON.parse(request.response);
 	console.log(data);
 	populateEmployees(data.employees);
-	populateSevervice(data)
+	populateSevervice(data.services, data.employees)
 }
 
 function populateEmployees(employees) {
@@ -26,17 +26,18 @@ function populateEmployees(employees) {
 	}
 }
 
-function populateSevervice(data) {
-	const services = data.services;
-	const employees = data.employees;
+function populateSevervice(services,employees) {
 	for (let i = 0; i < services.length; i++) {
 		const myArticle = document.createElement('article');
 		const myH2 = document.createElement('h2');
+		const myP = document.createElement('p');
 		const myUl = document.createElement('ul');
 
 		myH2.textContent = services[i].name;
-		myUl.setAttribute("id", services[i].name);
+		myP.textContent = 0;
+		myArticle.setAttribute("id", services[i].name);
 		myArticle.appendChild(myH2);
+		myArticle.appendChild(myP);
 		myArticle.appendChild(myUl);
 
 		document.getElementById('services').appendChild(myArticle);
@@ -46,7 +47,7 @@ function populateSevervice(data) {
 		const myP = document.createElement('li');
 
 		myP.textContent = employees[i].name;
-
-		document.getElementById(employees[i].service).appendChild(myP);
+		let count = document.querySelector("#" + employees[i].service + ">p").textContent++;
+		document.querySelector("#" + employees[i].service + ">ul").appendChild(myP);
 	}
 }

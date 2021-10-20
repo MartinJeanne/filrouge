@@ -45,7 +45,7 @@ ul {
     justify-content: space-between;
 }
 
-.serviceChild {
+.divSofts, .divEmployees {
     padding: 1vw;
     margin: 1vw;
     border-radius: 1vw;
@@ -53,17 +53,17 @@ ul {
     border-style: inset;
 }
 
-.serviceChild>div {
+.divSofts>div, .divEmployees>div {
     display: flex;
     align-items: baseline;
     margin-bottom: 2vw;
 }
 
-.serviceChild>div>h3 {
+.divSofts>div>h3, .divEmployees>div>h3 {
     margin-right: 1.5vw;
 }
 
-.serviceChild>div>p {
+.divSofts>div>p, .divEmployees>div>p {
     font-size: 1.5vw;
     color: rgb(13, 147, 224);
 }

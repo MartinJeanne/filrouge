@@ -3,6 +3,7 @@ html {
     margin: 0;
     background-color: rgb(49, 47, 47);
     color: rgb(235, 235, 235);
+    font-family: Verdana, sans-serif;
 }
 
 section#employees {

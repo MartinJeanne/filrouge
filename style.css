@@ -1,3 +1,19 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(173, 9, 9); 
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(199, 12, 12); 
+}
+
+
 html {
     padding: 3vw;
     margin: 0;
@@ -38,6 +54,7 @@ ul {
     margin: 1vw;
     background-color: rgb(37, 37, 37);
     border: 1px solid rgb(158, 158, 158);
+    border-radius: 1vw;
 }
 
 #services>article>div {
@@ -48,9 +65,10 @@ ul {
 .divSofts, .divEmployees {
     padding: 1vw;
     margin: 1vw;
-    border-radius: 1vw;
     border: 2px rgb(231, 231, 231);
     border-style: inset;
+    height: 20vh;
+    overflow: auto;
 }
 
 .divSofts>div, .divEmployees>div {
@@ -65,5 +83,5 @@ ul {
 
 .divSofts>div>p, .divEmployees>div>p {
     font-size: 1.5vw;
-    color: rgb(13, 147, 224);
+    color: rgb(13, 224, 108);
 }

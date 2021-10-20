@@ -6,7 +6,18 @@ html {
     font-family: Verdana, sans-serif;
 }
 
-section#employees {
+h2, p {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    margin-left: 20px;
+}
+
+#services {
     display: flex;
     flex-wrap: wrap;
     margin: 1vw;
@@ -14,13 +25,18 @@ section#employees {
     border: 1px solid rgb(116, 114, 114);
 }
 
-#employees>article {
+#services>article {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: rgb(37, 37, 37);
     padding: 1vw;
     margin: 1vw;
     border: 1px solid rgb(197, 197, 197);
+}
+
+#services>article>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5vh;
 }

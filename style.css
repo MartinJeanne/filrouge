@@ -6,9 +6,17 @@ html {
     font-family: Verdana, sans-serif;
 }
 
-h2, p {
+h2, h3, p {
     padding: 0;
     margin: 0;
+    display: inline-block;
+}
+
+h2 {
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vh;
 }
 
 ul {
@@ -26,17 +34,36 @@ ul {
 }
 
 #services>article {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(37, 37, 37);
     padding: 1vw;
     margin: 1vw;
-    border: 1px solid rgb(197, 197, 197);
+    background-color: rgb(37, 37, 37);
+    border: 1px solid rgb(158, 158, 158);
 }
 
 #services>article>div {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5vh;
+}
+
+.serviceChild {
+    padding: 1vw;
+    margin: 1vw;
+    border-radius: 1vw;
+    border: 2px rgb(231, 231, 231);
+    border-style: inset;
+}
+
+.serviceChild>div {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 2vw;
+}
+
+.serviceChild>div>h3 {
+    margin-right: 1.5vw;
+}
+
+.serviceChild>div>p {
+    font-size: 1.5vw;
+    color: rgb(13, 147, 224);
 }

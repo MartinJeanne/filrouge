@@ -67,7 +67,7 @@ function populateService(services, employees, softs) {
 		divSofts.setAttribute('class', 'divSofts');
 		divTitleSofts.appendChild(h3Softs);
 		divTitleSofts.appendChild(countSofts);
-		countSofts.setAttribute("id", services[i].name + 'Count');
+		countSofts.setAttribute("id", services[i].name + 'SoftsCount');
 		ulSofts.setAttribute("class", services[i].habilitations);
 		h3Softs.textContent = "Softwares :"
 
@@ -83,14 +83,17 @@ function populateService(services, employees, softs) {
 		document.getElementById(employees[i].service + 'EmployeesList').appendChild(li);
 	}
 
-	const softsUl = document.querySelectorAll('.divSofts>ul');
+	const divSofts = document.querySelectorAll('.divSofts');
+	console.log(divSofts);
 	for (let i = 0; i < softs.length; i++) {
-		for (let y = 0; y < softsUl.length; y++) {
-			let className = softsUl[y].className;
-			if (className.includes(softs[i].type) || className == '*') {
+		for (let y = 0; y < divSofts.length; y++) {
+			let softsUl = divSofts[y].children[1];
+			let softCount = divSofts[y].children[0].children[1];
+			if (softsUl.className.includes(softs[i].type) || softsUl.className == '*') {
 				let li = document.createElement('li');
 				li.textContent = softs[i].name;
-				softsUl[y].appendChild(li);
+				softsUl.appendChild(li);
+				softCount.textContent++;
 			}
 		}
 	}

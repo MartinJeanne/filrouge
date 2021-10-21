@@ -14,22 +14,26 @@
 }
 
 
-html {
-    padding: 3vw;
+html, body {
+    padding: 0;
     margin: 0;
-    background-color: rgb(49, 47, 47);
     color: rgb(235, 235, 235);
     font-family: Verdana, sans-serif;
 }
 
-h1 {
-    text-align: center;
-}
 
-h2, h3, p {
+
+h1, h2, h3, p {
     padding: 0;
     margin: 0;
     display: inline-block;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 5em;
+    text-shadow: 3px 3px 0px rgb(172, 172, 172);
 }
 
 h2 {
@@ -45,11 +49,22 @@ ul {
     margin-left: 20px;
 }
 
+.darkBg {
+    background-color: rgb(49, 47, 47);
+    padding: 3vw;
+    padding-bottom: 20vh;
+}
+
+.lightBg {
+    background-color: rgb(71, 70, 70);
+    padding: 3vw;
+    padding-bottom: 20vh;
+}
+
 #services {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 15vh;
 }
 
 #services>article {

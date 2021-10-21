@@ -84,7 +84,6 @@ function populateService(services, employees, softs) {
 	}
 
 	const divSofts = document.querySelectorAll('.divSofts');
-	console.log(divSofts);
 	for (let i = 0; i < softs.length; i++) {
 		for (let y = 0; y < divSofts.length; y++) {
 			let softsUl = divSofts[y].children[1];

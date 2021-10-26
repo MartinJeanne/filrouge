@@ -7,7 +7,7 @@ request.onload = function () {
 	const data = JSON.parse(request.response);
 	//populateEmployees(data.employees);
 	populateService(data.services, data.employees, data.softs);
-	populateDashboard(data.services, data.softs);
+	useOfSoftware(data.softs);
 }
 
 function populateEmployees(employees) {
@@ -68,7 +68,7 @@ function populateService(services, employees, softs) {
 		divSofts.setAttribute('class', 'divSofts');
 		divTitleSofts.appendChild(h3Softs);
 		divTitleSofts.appendChild(countSofts);
-		countSofts.setAttribute("id", services[i].name + 'SoftsCount');
+		countSofts.setAttribute("class", 'softsCount');
 		ulSofts.setAttribute("class", services[i].habilitations);
 		h3Softs.textContent = "Softwares :"
 
@@ -78,28 +78,28 @@ function populateService(services, employees, softs) {
 	employees.forEach(employee => {
 		let li = document.createElement('li');
 		li.textContent = employee.name;
-		let count = document.querySelector('#'+ employee.service).querySelector('.employeesCount');
-		let list = document.querySelector('#'+ employee.service).querySelector('.employeesList');
+		let count = document.querySelector('#' + employee.service).querySelector('.employeesCount');
+		let list = document.querySelector('#' + employee.service).querySelector('.employeesList');
 		count.textContent++;
 		list.appendChild(li);
 	});
 
 	const divSofts = document.querySelectorAll('.divSofts');
-	for (let i = 0; i < softs.length; i++) {
-		for (let y = 0; y < divSofts.length; y++) {
-			let softsUl = divSofts[y].children[1];
-			let softCount = divSofts[y].children[0].children[1];
-			if (softsUl.className.includes(softs[i].type) || softsUl.className == '*') {
+	softs.forEach(soft => {
+		divSofts.forEach(divSoft => {
+			let softsUl = divSoft.querySelector('ul');
+			let softCount = divSoft.querySelector('.softsCount');
+			if (softsUl.className.includes(soft.type) || softsUl.className == '*') {
 				let li = document.createElement('li');
-				li.textContent = softs[i].name;
+				li.textContent = soft.name;
 				softsUl.appendChild(li);
 				softCount.textContent++;
 			}
-		}
-	}
+		});
+	});
 }
 
-function populateDashboard(services, softs) {
+function useOfSoftware(softs) {
 	const servicesChild = document.querySelectorAll('.servicesChild');
 	const table = document.getElementById("softsUseT");
 	softs.forEach(soft => {

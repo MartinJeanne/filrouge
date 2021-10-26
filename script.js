@@ -9,7 +9,7 @@ request.onload = function () {
 	populateEmployees(data.employees);
 	populateSofts(data.softs);
 	useOfSoftware(data.softs);
-	licenceNeeded(data.licence);
+	licenceDashboard(data.licence);
 }
 
 function populateServices(services) {
@@ -111,24 +111,34 @@ function useOfSoftware(softs) {
 	});
 }
 
-function licenceNeeded(licences) {
-	const table = document.getElementById("licenceNeededT");
+function licenceDashboard(licences) {
+	const tableN = document.getElementById("licenceNeededT");
+	const tableO = document.getElementById("licenceOverflowT");
 	licences.forEach(licence => {
 		let tr = document.createElement('tr');
 		let tdName = document.createElement('td');
 		let tdCount = document.createElement('td');
-		tdCount.setAttribute('id', licence.name + 'Need')
 		tdName.textContent = licence.name;
+		tdCount.setAttribute('id', licence.name + 'Need')
 		tr.appendChild(tdName);
 		tr.appendChild(tdCount);
-		table.appendChild(tr);
+		tableN.appendChild(tr);
 
 		let softUse = document.getElementById(licence.name + 'Use');
+		var needed;
+		var overflow;
 		if (softUse) {
-			let needed = Number(softUse.textContent) - licence.count;
-			if (needed < 0) needed = 0;
-			tdCount.textContent = needed;
+			needed = Number(softUse.textContent) - licence.count;
+			if (needed < 0) {
+				overflow = -needed;
+				tdCount.setAttribute('id', licence.name + 'Overflow')
+				tdCount.textContent = overflow;
+				tr.appendChild(tdName);
+				tr.appendChild(tdCount);
+				tableO.appendChild(tr);
+			}
 		}
-		else tdCount.textContent = 0;
+		if (overflow) tdCount.textContent = overflow;
+		else tdCount.textContent = needed;
 	});
 }

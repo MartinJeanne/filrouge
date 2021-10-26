@@ -21,8 +21,6 @@ html, body {
     font-family: Verdana, sans-serif;
 }
 
-
-
 h1, h2, h3, p {
     padding: 0;
     margin: 0;
@@ -33,6 +31,7 @@ h1 {
     width: 100%;
     text-align: center;
     font-size: 5em;
+    margin-top: 1vh;
     text-shadow: 3px 3px 0px rgb(172, 172, 172);
 }
 
@@ -51,14 +50,12 @@ ul {
 
 .darkBg {
     background-color: rgb(49, 47, 47);
-    padding: 3vw;
-    padding-bottom: 20vh;
+    height: 100vh;
 }
 
 .lightBg {
     background-color: rgb(71, 70, 70);
-    padding: 3vw;
-    padding-bottom: 20vh;
+    height: 100vh;
 }
 
 #services {

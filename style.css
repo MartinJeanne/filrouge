@@ -117,7 +117,7 @@ ul {
     margin-top: 5vh;
 }
 
-#softsUse {
+#dashboard>article {
     padding: 1vw;
     margin: 1vw;
     background-color: rgb(37, 37, 37);
@@ -125,7 +125,7 @@ ul {
     border-radius: 1vw;
 }
 
-#softsUse>table {
+article>table {
     background-color: rgb(48, 47, 47);
     padding: 3vh;
 }

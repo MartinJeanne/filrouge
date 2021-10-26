@@ -9,6 +9,7 @@ request.onload = function () {
 	populateEmployees(data.employees);
 	populateSofts(data.softs);
 	useOfSoftware(data.softs);
+	licenceNeeded(data.licence);
 }
 
 function populateServices(services) {
@@ -95,6 +96,7 @@ function useOfSoftware(softs) {
 		let tr = document.createElement('tr');
 		let tdName = document.createElement('td');
 		let tdCount = document.createElement('td');
+		tdCount.setAttribute('id', soft.name + 'Use')
 		tdName.textContent = soft.name;
 		tr.appendChild(tdName);
 		tr.appendChild(tdCount);
@@ -106,5 +108,27 @@ function useOfSoftware(softs) {
 				tdCount.textContent = Number(tdCount.textContent) + Number(employeesCount.textContent);
 			}
 		});
+	});
+}
+
+function licenceNeeded(licences) {
+	const table = document.getElementById("licenceNeededT");
+	licences.forEach(licence => {
+		let tr = document.createElement('tr');
+		let tdName = document.createElement('td');
+		let tdCount = document.createElement('td');
+		tdCount.setAttribute('id', licence.name + 'Need')
+		tdName.textContent = licence.name;
+		tr.appendChild(tdName);
+		tr.appendChild(tdCount);
+		table.appendChild(tr);
+
+		let softUse = document.getElementById(licence.name + 'Use');
+		if (softUse) {
+			let needed = Number(softUse.textContent) - licence.count;
+			if (needed < 0) needed = 0;
+			tdCount.textContent = needed;
+		}
+		else tdCount.textContent = 0;
 	});
 }

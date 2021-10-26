@@ -6,7 +6,8 @@ request.send();
 request.onload = function () {
 	const data = JSON.parse(request.response);
 	//populateEmployees(data.employees);
-	populateService(data.services, data.employees, data.softs)
+	populateService(data.services, data.employees, data.softs);
+	populateDashboard(data.services, data.softs);
 }
 
 function populateEmployees(employees) {
@@ -51,15 +52,15 @@ function populateService(services, employees, softs) {
 		article.appendChild(div);
 		div.appendChild(divEmployees);
 		div.appendChild(divSofts);
-		div.setAttribute("class", 'serviceChild');
+		div.setAttribute("class", 'servicesChild');
 
 		divEmployees.appendChild(divTitleEmployees)
 		divEmployees.appendChild(ulEmployees);
 		divEmployees.setAttribute('class', 'divEmployees');
 		divTitleEmployees.appendChild(h3Employees);
 		divTitleEmployees.appendChild(countEmployees);
-		countEmployees.setAttribute("id", services[i].name + 'EmployeesCount');
-		ulEmployees.setAttribute("id", services[i].name + 'EmployeesList');
+		countEmployees.setAttribute("class", 'employeesCount');
+		ulEmployees.setAttribute("class", 'employeesList');
 		h3Employees.textContent = "Employees :";
 
 		divSofts.appendChild(divTitleSofts)
@@ -74,14 +75,14 @@ function populateService(services, employees, softs) {
 		document.getElementById('services').appendChild(article);
 	}
 
-	for (let i = 0; i < employees.length; i++) {
+	employees.forEach(employee => {
 		let li = document.createElement('li');
-
-		li.textContent = employees[i].name;
-
-		document.getElementById(employees[i].service + 'EmployeesCount').textContent++;
-		document.getElementById(employees[i].service + 'EmployeesList').appendChild(li);
-	}
+		li.textContent = employee.name;
+		let count = document.querySelector('#'+ employee.service).querySelector('.employeesCount');
+		let list = document.querySelector('#'+ employee.service).querySelector('.employeesList');
+		count.textContent++;
+		list.appendChild(li);
+	});
 
 	const divSofts = document.querySelectorAll('.divSofts');
 	for (let i = 0; i < softs.length; i++) {
@@ -96,4 +97,25 @@ function populateService(services, employees, softs) {
 			}
 		}
 	}
+}
+
+function populateDashboard(services, softs) {
+	const servicesChild = document.querySelectorAll('.servicesChild');
+	const table = document.getElementById("softsUseT");
+	softs.forEach(soft => {
+		let tr = document.createElement('tr');
+		let tdName = document.createElement('td');
+		let tdCount = document.createElement('td');
+		tdName.textContent = soft.name;
+		tr.appendChild(tdName);
+		tr.appendChild(tdCount);
+		table.appendChild(tr);
+		servicesChild.forEach(serviceChild => {
+			let softsUl = serviceChild.querySelector('.divSofts').querySelector('ul');
+			let employeesCount = serviceChild.querySelector('.divEmployees').querySelector('.employeesCount');
+			if (softsUl.className.includes(soft.type) || softsUl.className == '*') {
+				tdCount.textContent = Number(tdCount.textContent) + Number(employeesCount.textContent);
+			}
+		});
+	});
 }

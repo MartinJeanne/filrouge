@@ -5,29 +5,14 @@ request.send();
 
 request.onload = function () {
 	const data = JSON.parse(request.response);
-	//populateEmployees(data.employees);
-	populateService(data.services, data.employees, data.softs);
+	populateServices(data.services);
+	populateEmployees(data.employees);
+	populateSofts(data.softs);
 	useOfSoftware(data.softs);
 }
 
-function populateEmployees(employees) {
-	for (let i = 0; i < employees.length; i++) {
-		let myArticle = document.createElement('article');
-		let myH2 = document.createElement('h4');
-		let myP = document.createElement('p');
-
-		myH2.textContent = employees[i].name;
-		myP.textContent = employees[i].service;
-
-		myArticle.appendChild(myH2);
-		myArticle.appendChild(myP);
-
-		document.getElementById('employees').appendChild(myArticle);
-	}
-}
-
-function populateService(services, employees, softs) {
-	for (let i = 0; i < services.length; i++) {
+function populateServices(services) {
+	services.forEach(service => {
 		let article = document.createElement('article');
 		let h2 = document.createElement('h2');
 		let div = document.createElement('div');
@@ -44,10 +29,10 @@ function populateService(services, employees, softs) {
 		let countSofts = document.createElement('p');
 		let ulSofts = document.createElement('ul');
 
-		h2.textContent = services[i].name.charAt(0).toUpperCase() + services[i].name.slice(1);
+		h2.textContent = service.name.charAt(0).toUpperCase() + service.name.slice(1);
 		countEmployees.textContent = countSofts.textContent = 0;
 
-		article.setAttribute("id", services[i].name);
+		article.setAttribute("id", service.name);
 		article.appendChild(h2);
 		article.appendChild(div);
 		div.appendChild(divEmployees);
@@ -69,12 +54,14 @@ function populateService(services, employees, softs) {
 		divTitleSofts.appendChild(h3Softs);
 		divTitleSofts.appendChild(countSofts);
 		countSofts.setAttribute("class", 'softsCount');
-		ulSofts.setAttribute("class", services[i].habilitations);
+		ulSofts.setAttribute("class", service.habilitations);
 		h3Softs.textContent = "Softwares :"
 
 		document.getElementById('services').appendChild(article);
-	}
+	});
+}
 
+function populateEmployees(employees) {
 	employees.forEach(employee => {
 		let li = document.createElement('li');
 		li.textContent = employee.name;
@@ -83,7 +70,9 @@ function populateService(services, employees, softs) {
 		count.textContent++;
 		list.appendChild(li);
 	});
+}
 
+function populateSofts(softs) {
 	const divSofts = document.querySelectorAll('.divSofts');
 	softs.forEach(soft => {
 		divSofts.forEach(divSoft => {

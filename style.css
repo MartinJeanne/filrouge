@@ -104,8 +104,8 @@ ul {
     color: rgb(13, 224, 108);
 }
 
-
 /* Dashboard */
+
 .lightBg {
     background-color: rgb(71, 70, 70);
     height: 100vh;
@@ -131,7 +131,7 @@ article>table {
 }
 
 table, th, td {
-    border:1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
     border-collapse: collapse;
     padding: 1vh;
-  }
+}

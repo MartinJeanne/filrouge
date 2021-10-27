@@ -1,5 +1,5 @@
 let request = new XMLHttpRequest();
-request.open('GET', 'https://raw.githubusercontent.com/MartinJeanne/filrouge/master/data.json?token=ALCV2QXSNI76Y6J4PDUQJ6DBQIW3S');
+request.open('GET', 'https://raw.githubusercontent.com/MartinJeanne/filrouge/master/data/data.json?token=ALCV2QR3W2D4CIXK7BE53MDBQI2W6');
 request.responseType = 'text';
 request.send();
 

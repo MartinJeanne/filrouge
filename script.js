@@ -14,7 +14,7 @@ request.onload = function () {
 }*/
 
 // Get JSON with JQUERY API
-$.getJSON("data/data.json", function(data) {
+$.getJSON("data/data.json", function (data) {
 	populateServices(data.services);
 	populateEmployees(data.employees);
 	populateSofts(data.softs);

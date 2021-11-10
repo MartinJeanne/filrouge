@@ -1,4 +1,5 @@
-let request = new XMLHttpRequest();
+// Request JSON with XMLHttpRequest, work for external but i got blocked with internal file (cors error)
+/*let request = new XMLHttpRequest();
 request.open('GET', 'https://raw.githubusercontent.com/MartinJeanne/filrouge/master/data/data.json?token=ALCV2QR3W2D4CIXK7BE53MDBQI2W6');
 request.responseType = 'text';
 request.send();
@@ -10,7 +11,17 @@ request.onload = function () {
 	populateSofts(data.softs);
 	useOfSoftware(data.softs);
 	licenceDashboard(data.licence);
-}
+}*/
+
+// Get JSON with JQUERY API
+$.getJSON("data/data.json", function(data) {
+	populateServices(data.services);
+	populateEmployees(data.employees);
+	populateSofts(data.softs);
+	useOfSoftware(data.softs);
+	licenceDashboard(data.licence);
+});
+
 
 function populateServices(services) {
 	services.forEach(service => {
@@ -138,6 +149,7 @@ function licenceDashboard(licences) {
 				tableO.appendChild(tr);
 			}
 		}
+		else needed = 0;
 		if (overflow) tdCount.textContent = overflow;
 		else tdCount.textContent = needed;
 	});
